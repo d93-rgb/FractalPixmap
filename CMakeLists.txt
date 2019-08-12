@@ -5,7 +5,7 @@ cmake_minimum_required (VERSION 3.8)
 
 project ("FractalPixmap")
 
-include_directories("C:/ThirdParty/libraries/glm-0.9.9.3")
+include_directories("ext/glm")
 
 # Include sub-projects.
 add_subdirectory ("FractalPixmap")

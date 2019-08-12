@@ -10,7 +10,7 @@
 // TODO: Reference additional headers your program requires here.
 
 // zoom out/in factor
-constexpr float SCALE_FACTOR = 1.25;
+constexpr float SCALE_FACTOR = 1.0;
 
 /*
 	Power function for complex numbers
@@ -58,7 +58,7 @@ glm::vec2 centerAndScale(const glm::vec2& v, const glm::vec2& res)
 	// normalize in vertical direction and center coordinate axes
 	float scale = 1.333f;
 	glm::vec2 tmp = SCALE_FACTOR * (glm::vec2(scale * v.x, 2.0f * v.y) - res) / res.y;
-	tmp.x *= 1/scale;
+	tmp.x *= 1.5f;
 
 	return tmp;
 }
@@ -75,7 +75,7 @@ void draw(std::vector<glm::vec3>& colors, const glm::vec2& res, float exponent)
 	{
 		for (unsigned int j = 0; j < res.x; ++j)
 		{
-			colors[i * res.y + j] = getColor(glm::vec2(j, i), res, exponent);
+			colors[i * (unsigned int)(res.y) + j] = getColor(glm::vec2(j, i), res, exponent);
 		}
 	}
 }
