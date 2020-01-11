@@ -56,9 +56,8 @@ glm::vec3 iterateFractal(glm::vec2 start, float exponent)
 glm::vec2 centerAndScale(const glm::vec2& v, const glm::vec2& res)
 {
 	// normalize in vertical direction and center coordinate axes
-	float scale = 1.333f;
-	glm::vec2 tmp = SCALE_FACTOR * (glm::vec2(scale * v.x, 2.0f * v.y) - res) / res.y;
-	tmp.x *= 1.5f;
+	float scale = res.x / res.y; //1.333f;
+	glm::vec2 tmp = SCALE_FACTOR * (2.0f * glm::vec2(v.x, v.y) - res) / res.y;
 
 	return tmp;
 }
